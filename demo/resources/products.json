@@ -1,0 +1,43 @@
+[
+  {
+    "_id": "5f14b3864c9734a5719f4e84",
+    "label": "Camera D200",
+    "qte": 7,
+    "category": "CAMERA",
+    "description": "Duis irure labore sit velit esse amet. Ut non incididunt aute tempor. Veniam duis id cillum velit irure. Consequat in quis est consectetur ea veniam qui aute. Nisi et aute veniam amet ipsum.",
+    "tags": [
+      "leger",
+      "performant",
+      "noir"
+    ]
+  },
+  {
+    "_id": "5f14b386e0ea53d0370b68bf",
+    "label": "Lumiere 200W",
+    "qte": 32,
+    "category": "ACCESSORY",
+    "description": "Reprehenderit commodo enim deserunt eiusmod occaecat nostrud voluptate. Proident est dolore aliquip eu irure eu anim in reprehenderit ad eu aliquip ea nostrud. Deserunt ut ut ex occaecat occaecat eiusmod amet ex adipisicing non ad officia.",
+    "tags": [
+      "eclairage"
+    ]
+  },
+  {
+    "_id": "5f14b386316f1125f0aa54fd",
+    "label": "Objectif grand angle",
+    "qte": 11,
+    "category": "ACCESSORY",
+    "description": "Aute id esse laboris consectetur adipisicing dolore non et amet laboris eiusmod do sit cillum. Officia est labore velit veniam cupidatat officia tempor. Duis enim ipsum ipsum pariatur anim aliqua do sunt sit adipisicing. Mollit sit eu dolore adipisicing ad ut enim enim veniam non tempor laboris. Magna deserunt non pariatur sunt ullamco exercitation pariatur mollit incididunt esse. Eu aliquip aliquip magna dolore et excepteur veniam mollit quis. Exercitation ad dolor eiusmod veniam duis et labore laboris incididunt nostrud.",
+    "tags": [
+      "grand",
+      "angle"
+    ]
+  },
+  {
+    "_id": "5f14b386b914dd9f8b0696d1",
+    "label": "Flash multi directionnel",
+    "qte": 20,
+    "category": "ACCESSORY",
+    "description": "Fugiat voluptate aliqua sint voluptate sunt proident qui irure eu ea dolor ut. Aliquip amet tempor eiusmod id labore ex pariatur officia elit sint commodo reprehenderit qui. Do deserunt nulla ea aute.",
+    "tags": []
+  }
+]
