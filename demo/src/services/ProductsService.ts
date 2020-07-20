@@ -9,7 +9,7 @@ export class ProductsService {
   productModel: MongooseModel<ProductModel>;
 
   async productExists(id: string) {
-    return this.productModel.exists({id});
+    return this.productModel.exists({_id: id});
   }
 
   async addProduct(productCreation: ProductCreationModel) {
@@ -22,6 +22,12 @@ export class ProductsService {
         throw new ProductLabelExists(productCreation.label, er);
       }
     }
+  }
+
+  async updateProduct(product: ProductModel) {
+    await this.productModel.updateOne(product, {upsert: true}).exec();
+
+    return product;
   }
 
   async getProduct(id: string) {

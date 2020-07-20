@@ -1,7 +1,8 @@
 import {Context, Inject, Middleware, ParamTypes, Req, UseBefore} from "@tsed/common";
 import {applyDecorators, StoreSet} from "@tsed/core";
-import {BadRequest} from "@tsed/exceptions";
-import get from "lodash/get";
+import {NotFound} from "@tsed/exceptions";
+import {Returns} from "@tsed/swagger";
+import {get} from "lodash";
 import {ProductsService} from "../services/ProductsService";
 
 export interface ProductExistsOptions {
@@ -21,7 +22,7 @@ export class ProductIdExistsMiddleware {
       const product = await this.productsService.productExists(productId);
 
       if (!product) {
-        throw new BadRequest("Product not found");
+        throw new NotFound("Product not found");
       }
 
       context.set("product", product);
@@ -42,8 +43,9 @@ export class ProductIdExistsMiddleware {
   }
 }
 
-export function ProductIdExists(options: ProductExistsOptions): MethodDecorator {
+export function ProductIdExists(options: ProductExistsOptions = {}): MethodDecorator {
   return applyDecorators(
+    Returns(404, {description: "Product not found"}),
     StoreSet(ProductIdExistsMiddleware, options),
     UseBefore(ProductIdExistsMiddleware)
   );
