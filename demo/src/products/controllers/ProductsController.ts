@@ -1,9 +1,9 @@
 import {BodyParams, Controller, Get, Inject, PathParams, Post, Put, Required, Status} from "@tsed/common";
 import {NotFound} from "@tsed/exceptions";
 import {Returns, ReturnsArray, Summary} from "@tsed/swagger";
-import {ProductIdExists} from "../../decorators/ProductIdExists";
-import {ProductCreationModel, ProductModel} from "../../models/ProductModel";
-import {ProductsService} from "../../services/ProductsService";
+import {ProductIdExists} from "../decorators/ProductIdExists";
+import {ProductCreationModel, ProductModel} from "../models/ProductModel";
+import {ProductsService} from "../services/ProductsService";
 
 @Controller("/products")
 export class ProductsController {

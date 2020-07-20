@@ -1,7 +1,7 @@
 import {PlatformTest} from "@tsed/common";
 import {TestMongooseContext} from "@tsed/testing-mongoose";
 import * as SuperTest from "supertest";
-import {ProductCategory} from "../../models/ProductModel";
+import {ProductCategory} from "../models/ProductModel";
 import {Server} from "../../Server";
 import {ProductsController} from "./ProductsController";
 

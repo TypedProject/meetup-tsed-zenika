@@ -6,7 +6,7 @@ Meetup organized by Artips. See event details here: https://www.linkedin.com/eve
 
 - [Slides](./resources/slides-2.pptx) 
 - [Demo](./demo) 
-- [Decorator example](./demo/src/decorators/Log.ts)
+- [Decorator example](demo/src/products/decorators/Log.ts)
 - [Controller example](./demo/src/controllers/users/UserController.ts)
 
 ## Example
