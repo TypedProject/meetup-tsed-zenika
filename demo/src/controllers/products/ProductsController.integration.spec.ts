@@ -116,7 +116,7 @@ describe("ProductsController", () => {
     });
   });
 
-  describe("GET /products", () => {
+  describe("GET /products/:id", () => {
     it("should get product", async () => {
       const response = await request
         .post("/products")
@@ -133,6 +133,43 @@ describe("ProductsController", () => {
 
     it("should throw a 404 when product id doesn't exists", async () => {
       const response = await request.get(`/products/5f14b6fa7b695776c88dff40`).expect(404);
+
+      expect(response.text).toEqual("Product not found");
+    });
+  });
+
+  describe("PUT /products/:id", () => {
+    it("should get product", async () => {
+      const response = await request
+        .post("/products")
+        .send({
+          label: "Camera D400",
+          description: "Camera HD",
+          category: ProductCategory.CAMERA,
+          tags: ["camera", "reflex", "apn"]
+        })
+        .expect(201);
+
+      response.body.description = "Camera HD update";
+
+      const {body: product} = await request
+        .put(`/products/${response.body.id}`)
+        .send(response.body)
+        .expect(201);
+
+      expect(product.description).toEqual("Camera HD update");
+    });
+
+    it("should throw a 404 when product id doesn't exists", async () => {
+      const response = await request
+        .put(`/products/5f14b6fa7b695776c88dff40`)
+        .send({
+          label: "Camera D400",
+          description: "Camera HD",
+          category: ProductCategory.CAMERA,
+          tags: ["camera", "reflex", "apn"]
+        })
+        .expect(404);
 
       expect(response.text).toEqual("Product not found");
     });

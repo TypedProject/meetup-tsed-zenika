@@ -1,6 +1,7 @@
-import {BodyParams, Controller, Get, Inject, PathParams, Post, Required, Status} from "@tsed/common";
-import {BadRequest, NotFound} from "@tsed/exceptions";
+import {BodyParams, Controller, Get, Inject, PathParams, Post, Put, Required, Status} from "@tsed/common";
+import {NotFound} from "@tsed/exceptions";
 import {Returns, ReturnsArray, Summary} from "@tsed/swagger";
+import {ProductIdExists} from "../../decorators/ProductIdExists";
 import {ProductCreationModel, ProductModel} from "../../models/ProductModel";
 import {ProductsService} from "../../services/ProductsService";
 
@@ -11,8 +12,8 @@ export class ProductsController {
 
   @Get("/:id")
   @Summary("Get a product by is id")
+  @ProductIdExists()
   @Returns(ProductModel)
-  @Returns(404, {description: "Product not found"})
   async getProduct(@PathParams("id") id: string): Promise<ProductModel> {
     const product = await this.productsService.getProduct(id);
 
@@ -29,6 +30,14 @@ export class ProductsController {
   @Returns(ProductModel)
   async addProduct(@BodyParams() @Required() product: ProductCreationModel) {
     return await this.productsService.addProduct(product);
+  }
+
+  @Put("/:id")
+  @Summary("Update a product")
+  @Returns(ProductModel)
+  @ProductIdExists()
+  async updateProduct(@BodyParams() @Required() product: ProductModel) {
+    return await this.productsService.updateProduct(product);
   }
 
   @Get("/")

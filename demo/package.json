@@ -12,6 +12,7 @@
     "test:coverage": "yarn test:unit",
     "test:lint": "eslint src --ext .ts",
     "test:lint:fix": "eslint src --ext .ts --fix",
+    "clean:cache": "jest --clearCache",
     "prettier": "prettier '{src,test}/**/*.ts' --write"
   },
   "dependencies": {
